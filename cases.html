@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Falak Naz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="max-w-4xl mx-auto px-6 py-8 bg-[#F9FAFB] text-[#111827]">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center mb-12 border-b pb-4">
+        <div class="font-bold text-xl text-[#1E293B]">Falak Naz</div>
+        <div class="space-x-6 text-sm font-medium">
+            <a href="index.html" class="hover:text-[#D97706]">Home</a>
+            <a href="cases.html" class="text-[#D97706]">Case Studies</a>
+            <a href="about.html" class="hover:text-[#D97706]">About</a>
+            <a href="contact.html" class="hover:text-[#D97706]">Contact</a>
+        </div>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-[#1E293B] mb-8">Featured Technical Projects</h1>
+
+    <!-- Case 1: FlyRank -->
+    <div class="bg-white p-6 border rounded-lg mb-8 shadow-sm">
+        <span class="text-xs font-semibold bg-amber-100 text-[#D97706] px-2.5 py-1 rounded">Lead Case Study</span>
+        <h2 class="text-2xl font-bold text-[#1E293B] mt-2 mb-3">FlyRank Search Intent Decay Model</h2>
+        <p class="text-gray-600 mb-4">Predicted search performance decay across 79M+ rows using strict GroupKFold client-level validation splits to eliminate data leakage.</p>
+        <div class="bg-slate-900 text-slate-100 p-4 rounded text-sm mb-4 overflow-x-auto">
+            <code>from sklearn.model_selection import GroupKFold<br>gkf = GroupKFold(n_splits=5)<br># Strict non-leaking client validation split logic</code>
+        </div>
+        <a href="https://github.com/FALAKNAZMALICK" target="_blank" class="text-[#D97706] font-medium hover:underline">View GitHub Research Artifact →</a>
+    </div>
+
+    <!-- Case 2: Oracle APEX DBMS -->
+    <div class="bg-white p-6 border rounded-lg mb-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-[#1E293B] mb-3">Oracle APEX Relational Database System</h2>
+        <p class="text-gray-600 mb-4">Engineered fully normalized (1NF to BCNF) schemas with automated SQL trigger constraints and zero-anomaly transaction processing.</p>
+        <a href="https://stellular-pithivier-40b04d.netlify.app" target="_blank" class="text-[#D97706] font-medium hover:underline">View Live Netlify DBMS Report →</a>
+    </div>
+
+    <!-- Case 3: n8n Automation -->
+    <div class="bg-white p-6 border rounded-lg shadow-sm">
+        <h2 class="text-2xl font-bold text-[#1E293B] mb-3">Automated Data Processing Pipeline (n8n)</h2>
+        <p class="text-gray-600 mb-4">Constructed an automated multi-step pipeline connecting Webhooks, Gemini AI API, and Google Sheets for entity extraction.</p>
+        <a href="#" class="text-gray-400 font-medium">Workflow Active in Cloud</a>
+    </div>
+</body>
+</html>
