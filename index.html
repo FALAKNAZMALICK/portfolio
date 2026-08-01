@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FALAK NAZ — Portfolio</title>
+    <title>Falak Naz | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F9FAFB;
-            color: #111827;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            color: #1E293B;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: #D97706;
-            font-weight: 500;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: #111827; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>FALAK NAZ</h1>
-        <p>Computer Science Student | Data Analytics & AI/ML</p>
-    </div>
+<body class="max-w-4xl mx-auto px-6 py-8">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center mb-16 border-b pb-4">
+        <div class="font-bold text-xl text-[#1E293B]">Falak Naz</div>
+        <div class="space-x-6 text-sm font-medium">
+            <a href="index.html" class="text-[#D97706]">Home</a>
+            <a href="cases.html" class="hover:text-[#D97706]">Case Studies</a>
+            <a href="about.html" class="hover:text-[#D97706]">About</a>
+            <a href="contact.html" class="hover:text-[#D97706]">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="my-16">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-[#1E293B] leading-tight mb-6">
+            I build production-ready ML validation pipelines and relational database systems that turn complex datasets into reliable business intelligence.
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+            Computer Science Student at NED University specializing in Data Analytics, Machine Learning & Systems Engineering.
+        </p>
+        <div class="space-x-4">
+            <a href="cases.html" class="bg-[#1E293B] text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-700">Explore Case Studies</a>
+            <a href="contact.html" class="bg-[#D97706] text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-600">Download CV / Contact</a>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 my-16 border-t pt-8">
+        <div class="p-4 border rounded-lg bg-white">
+            <div class="text-3xl font-bold text-[#D97706]">79M+</div>
+            <div class="text-sm text-gray-500 mt-1">Search Log Rows Processed</div>
+        </div>
+        <div class="p-4 border rounded-lg bg-white">
+            <div class="text-3xl font-bold text-[#D97706]">0%</div>
+            <div class="text-sm text-gray-500 mt-1">Data Leakage in ML Splits</div>
+        </div>
+        <div class="p-4 border rounded-lg bg-white">
+            <div class="text-3xl font-bold text-[#D97706]">BCNF</div>
+            <div class="text-sm text-gray-500 mt-1">Normalized Relational Schemas</div>
+        </div>
+    </section>
 </body>
 </html>
