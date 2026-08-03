@@ -4,38 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Falak Naz</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: #F8FAFC; 
+            color: #0F172A; 
+            overflow-x: hidden;
+        }
+        /* Mobile compliance touch target sizing */
+        .touch-target {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="max-w-4xl mx-auto px-6 py-8 bg-[#F9FAFB] text-[#111827]">
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center mb-12 border-b pb-4">
-        <div class="font-bold text-xl text-[#1E293B]">Falak Naz</div>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="index.html" class="hover:text-[#D97706]">Home</a>
-            <a href="cases.html" class="hover:text-[#D97706]">Case Studies</a>
-            <a href="about.html" class="hover:text-[#D97706]">About</a>
-            <a href="contact.html" class="text-[#D97706]">Contact</a>
-        </div>
-    </nav>
+<body class="min-h-screen flex flex-col justify-between max-w-4xl mx-auto px-4 sm:px-8 py-6 md:py-10">
 
-    <h1 class="text-3xl font-bold text-[#1E293B] mb-6">Get In Touch</h1>
-    <p class="text-gray-600 mb-8">Interested in discussing data engineering projects or scheduling a technical interview? Feel free to reach out directly.</p>
+    <!-- Content Container -->
+    <div class="flex-grow">
+        <!-- Navigation -->
+        <header>
+            <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 sm:mb-14 border-b border-slate-200 pb-5">
+                <a href="index.html" class="font-extrabold text-2xl tracking-tight text-[#1E293B]">
+                    Falak Naz
+                </a>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-4 text-sm font-semibold w-full sm:w-auto">
+                    <a href="index.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Home</a>
+                    <a href="cases.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Case Studies</a>
+                    <a href="about.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">About</a>
+                    <a href="contact.html" class="touch-target px-3 py-1.5 text-[#D97706] border-b-2 border-[#D97706] font-bold">Contact</a>
+                </div>
+            </nav>
+        </header>
 
-    <div class="bg-white p-6 border rounded-lg mb-8 max-w-lg">
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-            <input type="email" class="w-full border p-2 rounded focus:outline-none focus:ring-1 focus:ring-[#D97706]" placeholder="recruiter@company.com">
-        </div>
-        <div class="mb-4">
-            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-            <textarea class="w-full border p-2 rounded h-24 focus:outline-none focus:ring-1 focus:ring-[#D97706]" placeholder="Schedule an interview..."></textarea>
-        </div>
-        <button class="bg-[#1E293B] text-white px-6 py-2 rounded font-medium hover:bg-slate-700 w-full">Send Message</button>
+        <main>
+            <!-- Page Header -->
+            <section class="mb-8">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-[#1E293B] tracking-tight mb-3">
+                    Get In Touch
+                </h1>
+                <p class="text-slate-600 text-base max-w-xl leading-relaxed">
+                    Interested in discussing data engineering projects, machine learning pipeline collaborations, or scheduling a technical interview? Feel free to reach out directly.
+                </p>
+            </section>
+
+            <!-- Main Grid: Form + Direct Links -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 items-start">
+                
+                <!-- Form Column -->
+                <form action="#" method="POST" class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm md:col-span-7">
+                    <div class="mb-5">
+                        <label for="email" class="block text-sm font-semibold text-[#1E293B] mb-1.5">Your Email</label>
+                        <input 
+                            type="email" 
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full border border-slate-300 px-3.5 py-2.5 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D97706]/20 focus:border-[#D97706] transition-all text-sm" 
+                            placeholder="recruiter@company.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-semibold text-[#1E293B] mb-1.5">Message</label>
+                        <textarea 
+                            id="message"
+                            name="message"
+                            required
+                            rows="4"
+                            class="w-full border border-slate-300 px-3.5 py-2.5 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D97706]/20 focus:border-[#D97706] transition-all text-sm resize-y" 
+                            placeholder="Schedule an interview or share project details..."></textarea>
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="touch-target w-full bg-[#1E293B] text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-700 active:scale-[0.99] transition-all text-center shadow-sm">
+                        Send Message
+                    </button>
+                </form>
+
+                <!-- Professional Profiles & Info Column -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="bg-white p-6 border border-slate-200 rounded-xl shadow-sm">
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Professional Profiles</h2>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <div class="text-xs font-medium text-slate-500 mb-0.5">GitHub</div>
+                                <a href="https://github.com/FALAKNAZMALICK" target="_blank" rel="noopener noreferrer" class="touch-target text-[#D97706] font-semibold hover:underline inline-flex items-center gap-1.5">
+                                    <span>github.com/FALAKNAZMALICK</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+
+                            <div class="border-t border-slate-100 pt-3">
+                                <div class="text-xs font-medium text-slate-500 mb-0.5">LinkedIn</div>
+                                <a href="https://linkedin.com/in/falaknaz-" target="_blank" rel="noopener noreferrer" class="touch-target text-[#D97706] font-semibold hover:underline inline-flex items-center gap-1.5">
+                                    <span>linkedin.com/in/falaknaz-</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50/60 border border-amber-200/60 p-5 rounded-xl text-xs text-amber-900 leading-relaxed">
+                        <span class="font-bold block mb-1">Open to Opportunities</span>
+                        Actively seeking Data Engineering, ML Engineering, and Systems roles. Direct email responses are sent within 24 hours.
+                    </div>
+                </div>
+
+            </div>
+        </main>
     </div>
 
-    <div class="space-y-2 text-sm text-gray-600">
-        <p><strong>GitHub:</strong> <a href="https://github.com/FALAKNAZMALICK" class="text-[#D97706] hover:underline">github.com/FALAKNAZMALICK</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/falaknaz-" class="text-[#D97706] hover:underline">linkedin.com/in/falaknaz-</a></p>
-    </div>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 pt-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Falak Naz. Built for performance and responsiveness.</p>
+    </footer>
+
 </body>
 </html>
