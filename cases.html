@@ -4,45 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies | Falak Naz</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: #F8FAFC; 
+            color: #0F172A; 
+            overflow-x: hidden;
+        }
+        /* Touch target compliance for mobile interaction */
+        .touch-target {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="max-w-4xl mx-auto px-6 py-8 bg-[#F9FAFB] text-[#111827]">
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center mb-12 border-b pb-4">
-        <div class="font-bold text-xl text-[#1E293B]">Falak Naz</div>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="index.html" class="hover:text-[#D97706]">Home</a>
-            <a href="cases.html" class="text-[#D97706]">Case Studies</a>
-            <a href="about.html" class="hover:text-[#D97706]">About</a>
-            <a href="contact.html" class="hover:text-[#D97706]">Contact</a>
+<body class="min-h-screen flex flex-col max-w-4xl mx-auto px-4 sm:px-8 py-6 md:py-10">
+
+    <!-- Navigation Header -->
+    <header>
+        <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 sm:mb-14 border-b border-slate-200 pb-5">
+            <a href="index.html" class="font-extrabold text-2xl tracking-tight text-[#1E293B]">
+                Falak Naz
+            </a>
+            <div class="flex flex-wrap items-center gap-1 sm:gap-4 text-sm font-semibold w-full sm:w-auto">
+                <a href="index.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Home</a>
+                <a href="cases.html" class="touch-target px-3 py-1.5 text-[#D97706] border-b-2 border-[#D97706] font-bold">Case Studies</a>
+                <a href="about.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">About</a>
+                <a href="contact.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+        <header class="mb-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-[#1E293B] tracking-tight mb-2">
+                Featured Technical Projects
+            </h1>
+            <p class="text-slate-600 text-sm sm:text-base">
+                In-depth look into data pipelines, machine learning models, and database engineering solutions.
+            </p>
+        </header>
+
+        <div class="space-y-6 sm:space-y-8 mb-12">
+            
+            <!-- Case 1: FlyRank -->
+            <article class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span class="text-xs font-semibold bg-amber-50 text-[#D97706] border border-amber-200/60 px-3 py-1 rounded-full">
+                        Lead Case Study
+                    </span>
+                    <span class="text-xs font-medium text-slate-400">Machine Learning / Data Engineering</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-[#1E293B] mb-3">
+                    FlyRank Search Intent Decay Model
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-5 text-sm sm:text-base">
+                    Predicted search performance decay across 79M+ rows using strict <code class="bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded text-xs sm:text-sm font-mono">GroupKFold</code> client-level validation splits to eliminate data leakage across temporal domains.
+                </p>
+                
+                <!-- Code Snippet Box -->
+                <div class="bg-slate-900 text-slate-100 p-4 rounded-lg text-xs sm:text-sm font-mono mb-5 overflow-x-auto border border-slate-800 shadow-inner">
+                    <div class="text-slate-500 text-xs select-none mb-1">// Cross-validation splitting logic</div>
+                    <span class="text-purple-400">from</span> sklearn.model_selection <span class="text-purple-400">import</span> GroupKFold<br>
+                    gkf = GroupKFold(n_splits=<span class="text-amber-400">5</span>)<br>
+                    <span class="text-slate-400"># Strict non-leaking client validation split logic</span>
+                </div>
+
+                <a href="https://github.com/FALAKNAZMALICK" target="_blank" rel="noopener noreferrer" class="touch-target inline-flex items-center gap-1.5 text-[#D97706] font-semibold text-sm hover:underline">
+                    <span>View GitHub Research Artifact</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </article>
+
+            <!-- Case 2: Oracle APEX DBMS -->
+            <article class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
+                        Database Engineering
+                    </span>
+                    <span class="text-xs font-medium text-slate-400">Oracle APEX / SQL</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-[#1E293B] mb-3">
+                    Oracle APEX Relational Database System
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-5 text-sm sm:text-base">
+                    Engineered fully normalized (1NF to BCNF) schemas with automated SQL trigger constraints, strict integrity rule checks, and zero-anomaly transaction processing.
+                </p>
+                <a href="https://stellular-pithivier-40b04d.netlify.app" target="_blank" rel="noopener noreferrer" class="touch-target inline-flex items-center gap-1.5 text-[#D97706] font-semibold text-sm hover:underline">
+                    <span>View Live Netlify DBMS Report</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </article>
+
+            <!-- Case 3: n8n Automation -->
+            <article class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
+                        Workflow Automation
+                    </span>
+                    <span class="text-xs font-medium text-slate-400">n8n / Gemini AI / Webhooks</span>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-[#1E293B] mb-3">
+                    Automated Data Processing Pipeline (n8n)
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-5 text-sm sm:text-base">
+                    Constructed an automated multi-step pipeline connecting Webhooks, Gemini AI API, and Google Sheets for real-time unstructured text entity extraction and structured sync.
+                </p>
+                <div class="inline-flex items-center gap-2 text-slate-400 font-medium text-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Workflow Active in Cloud</span>
+                </div>
+            </article>
+
         </div>
-    </nav>
+    </main>
 
-    <h1 class="text-3xl font-bold text-[#1E293B] mb-8">Featured Technical Projects</h1>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 pt-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Falak Naz. Built for performance and responsiveness.</p>
+    </footer>
 
-    <!-- Case 1: FlyRank -->
-    <div class="bg-white p-6 border rounded-lg mb-8 shadow-sm">
-        <span class="text-xs font-semibold bg-amber-100 text-[#D97706] px-2.5 py-1 rounded">Lead Case Study</span>
-        <h2 class="text-2xl font-bold text-[#1E293B] mt-2 mb-3">FlyRank Search Intent Decay Model</h2>
-        <p class="text-gray-600 mb-4">Predicted search performance decay across 79M+ rows using strict GroupKFold client-level validation splits to eliminate data leakage.</p>
-        <div class="bg-slate-900 text-slate-100 p-4 rounded text-sm mb-4 overflow-x-auto">
-            <code>from sklearn.model_selection import GroupKFold<br>gkf = GroupKFold(n_splits=5)<br># Strict non-leaking client validation split logic</code>
-        </div>
-        <a href="https://github.com/FALAKNAZMALICK" target="_blank" class="text-[#D97706] font-medium hover:underline">View GitHub Research Artifact →</a>
-    </div>
-
-    <!-- Case 2: Oracle APEX DBMS -->
-    <div class="bg-white p-6 border rounded-lg mb-8 shadow-sm">
-        <h2 class="text-2xl font-bold text-[#1E293B] mb-3">Oracle APEX Relational Database System</h2>
-        <p class="text-gray-600 mb-4">Engineered fully normalized (1NF to BCNF) schemas with automated SQL trigger constraints and zero-anomaly transaction processing.</p>
-        <a href="https://stellular-pithivier-40b04d.netlify.app" target="_blank" class="text-[#D97706] font-medium hover:underline">View Live Netlify DBMS Report →</a>
-    </div>
-
-    <!-- Case 3: n8n Automation -->
-    <div class="bg-white p-6 border rounded-lg shadow-sm">
-        <h2 class="text-2xl font-bold text-[#1E293B] mb-3">Automated Data Processing Pipeline (n8n)</h2>
-        <p class="text-gray-600 mb-4">Constructed an automated multi-step pipeline connecting Webhooks, Gemini AI API, and Google Sheets for entity extraction.</p>
-        <a href="#" class="text-gray-400 font-medium">Workflow Active in Cloud</a>
-    </div>
 </body>
 </html>
