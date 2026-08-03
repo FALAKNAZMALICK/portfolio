@@ -4,39 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Falak Naz</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background-color: #F8FAFC; 
+            color: #0F172A; 
+            overflow-x: hidden;
+        }
+        /* Touch target compliance for mobile interaction */
+        .touch-target {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-<body class="max-w-4xl mx-auto px-6 py-8 bg-[#F9FAFB] text-[#111827]">
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center mb-12 border-b pb-4">
-        <div class="font-bold text-xl text-[#1E293B]">Falak Naz</div>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="index.html" class="hover:text-[#D97706]">Home</a>
-            <a href="cases.html" class="hover:text-[#D97706]">Case Studies</a>
-            <a href="about.html" class="text-[#D97706]">About</a>
-            <a href="contact.html" class="hover:text-[#D97706]">Contact</a>
-        </div>
-    </nav>
+<body class="min-h-screen flex flex-col justify-between max-w-4xl mx-auto px-4 sm:px-8 py-6 md:py-10">
 
-    <h1 class="text-3xl font-bold text-[#1E293B] mb-6">About Me</h1>
-    
-    <div class="prose max-w-none text-gray-700 leading-relaxed mb-8">
-        <p class="mb-4">
-            I am a Computer Science student at <strong>NED University</strong> with a strong focus on Data Analytics, Machine Learning frameworks, Database Management Systems (DBMS), and workflow automation.
-        </p>
-        <p class="mb-4">
-            My engineering philosophy prioritizes technical rigor, verifiable metrics, and data integrity over decorative fluff. I focus on building systems that don't leak context and deliver real, measurable business insight.
-        </p>
+    <!-- Content Wrapper -->
+    <div class="flex-grow">
+        <!-- Navigation Header -->
+        <header>
+            <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 sm:mb-14 border-b border-slate-200 pb-5">
+                <a href="index.html" class="font-extrabold text-2xl tracking-tight text-[#1E293B]">
+                    Falak Naz
+                </a>
+                <div class="flex flex-wrap items-center gap-1 sm:gap-4 text-sm font-semibold w-full sm:w-auto">
+                    <a href="index.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Home</a>
+                    <a href="cases.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Case Studies</a>
+                    <a href="about.html" class="touch-target px-3 py-1.5 text-[#D97706] border-b-2 border-[#D97706] font-bold">About</a>
+                    <a href="contact.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Page Title -->
+            <section class="mb-8">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-[#1E293B] tracking-tight mb-3">
+                    About Me
+                </h1>
+                <p class="text-slate-600 text-base max-w-2xl leading-relaxed">
+                    Background, engineering philosophy, and the technologies powering my pipelines and systems.
+                </p>
+            </section>
+
+            <!-- Bio & Philosophy -->
+            <section class="space-y-6 mb-12">
+                <div class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    <p>
+                        I am a Computer Science student at <strong class="text-[#1E293B] font-semibold">NED University</strong> with a strong focus on Data Analytics, Machine Learning frameworks, Database Management Systems (DBMS), and workflow automation.
+                    </p>
+                    <p>
+                        My work revolves around solving real-world data engineering challenges—from designing BCNF-normalized relational schemas that guarantee transaction integrity, to evaluating machine learning models with strict validation strategies that prevent data leakage.
+                    </p>
+                </div>
+
+                <!-- Philosophy Callout Box -->
+                <div class="bg-amber-50/60 border border-amber-200/80 p-6 rounded-xl shadow-sm">
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-[#D97706] mb-2">Engineering Philosophy</h2>
+                    <p class="text-slate-800 font-medium leading-relaxed text-sm sm:text-base">
+                        My philosophy prioritizes technical rigor, verifiable metrics, and data integrity over decorative fluff. I focus on building systems that don't leak context and deliver real, measurable business insight.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Technical Stack Grid -->
+            <section class="mb-12">
+                <h2 class="text-xl font-bold text-[#1E293B] mb-6">Technical Stack</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Core Languages -->
+                    <div class="bg-white p-5 border border-slate-200 rounded-xl shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Core Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">Python</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">SQL</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">C++ / C</span>
+                        </div>
+                    </div>
+
+                    <!-- ML & Data Science -->
+                    <div class="bg-white p-5 border border-slate-200 rounded-xl shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">ML & Data Engineering</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">pandas</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">scikit-learn</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">NumPy</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases & Systems -->
+                    <div class="bg-white p-5 border border-slate-200 rounded-xl shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Databases & Automation</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">Oracle APEX</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">Relational Schema (BCNF)</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">n8n Automation</span>
+                        </div>
+                    </div>
+
+                    <!-- Web & UI -->
+                    <div class="bg-white p-5 border border-slate-200 rounded-xl shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Frontend & Tooling</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">HTML5</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">Tailwind CSS</span>
+                            <span class="bg-slate-100 border border-slate-200/80 text-slate-800 px-3 py-1.5 rounded-lg text-xs font-medium hover:border-amber-300 transition-colors">Git & GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <h2 class="text-xl font-bold text-[#1E293B] mb-4">Technical Stack</h2>
-    <div class="flex flex-wrap gap-2 mb-8">
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">Python</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">SQL / Oracle APEX</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">C++ / C</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">pandas / scikit-learn</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">n8n Automation</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded text-sm">HTML5 / Tailwind CSS</span>
-    </div>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 pt-6 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Falak Naz. Built for performance and responsiveness.</p>
+    </footer>
+
 </body>
 </html>
