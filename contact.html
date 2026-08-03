@@ -1,127 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Falak Naz</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { 
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: #F8FAFC; 
-            color: #0F172A; 
-            overflow-x: hidden;
-        }
-        /* Mobile compliance touch target sizing */
-        .touch-target {
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Falak Naz</title>
+<meta name="description" content="Get in touch with Falak Naz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E14;
+    --surface:#10151F;
+    --surface-2:#151C29;
+    --border:#232B3A;
+    --text:#EDF1F7;
+    --muted:#8A93A6;
+    --amber:#E8A33D;
+    --teal:#46D9C2;
+    --red:#F0685C;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(70,217,194,0.07), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(232,163,61,0.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--amber);color:#0A0E14;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--teal);outline-offset:3px;border-radius:4px;
+  }
+
+  header{border-bottom:1px solid var(--border);position:sticky;top:0;
+    background:rgba(10,14,20,0.85);backdrop-filter:blur(10px);z-index:50;}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;flex-wrap:wrap;gap:12px;}
+  .brand{font-family:var(--mono);font-weight:700;font-size:16px;letter-spacing:0.02em;
+    text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);}
+  .navlinks{display:flex;gap:4px;font-family:var(--mono);font-size:13px;flex-wrap:wrap;}
+  .navlinks a{padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--muted);
+    min-height:36px;display:inline-flex;align-items:center;transition:color .15s ease, background .15s ease;}
+  .navlinks a:hover{color:var(--text);background:var(--surface-2);}
+  .navlinks a.active{color:var(--amber);background:rgba(232,163,61,0.08);}
+
+  main{padding:56px 0 80px;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--teal);letter-spacing:0.08em;
+    text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--teal);}
+  h1{font-family:var(--mono);font-weight:700;font-size:clamp(26px,4vw,36px);
+    line-height:1.2;letter-spacing:-0.01em;margin:0 0 14px;}
+  .sub{color:var(--muted);font-size:15.5px;max-width:56ch;margin:0 0 40px;}
+
+  .layout{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:start;}
+  @media (max-width:820px){.layout{grid-template-columns:1fr;}}
+
+  .side-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;}
+  .side-card .k{font-family:var(--mono);font-size:11px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;}
+  .side-card .v{font-family:var(--mono);font-size:14px;margin-bottom:18px;}
+  .side-card .v:last-child{margin-bottom:0;}
+  .side-card a.v{color:var(--teal);text-decoration:none;}
+  .side-card a.v:hover{text-decoration:underline;}
+
+  form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;}
+  .field{margin-bottom:20px;}
+  label{display:block;font-family:var(--mono);font-size:12px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;}
+  input, textarea{
+    width:100%;background:var(--surface-2);border:1px solid var(--border);
+    border-radius:8px;padding:12px 14px;color:var(--text);font-family:var(--sans);
+    font-size:14.5px;transition:border-color .15s ease;
+  }
+  input::placeholder, textarea::placeholder{color:#586173;}
+  input:focus, textarea:focus{border-color:var(--teal);outline:none;}
+  textarea{resize:vertical;min-height:120px;}
+  .error-msg{font-family:var(--mono);font-size:12px;color:var(--red);margin-top:6px;
+    display:none;}
+  .field.invalid input, .field.invalid textarea{border-color:var(--red);}
+  .field.invalid .error-msg{display:block;}
+
+  .btn{font-family:var(--mono);font-size:13.5px;font-weight:600;padding:13px 22px;
+    border-radius:8px;border:none;cursor:pointer;min-height:44px;
+    background:var(--amber);color:#141008;transition:opacity .15s ease, transform .15s ease;}
+  .btn:hover{opacity:0.9;}
+  .btn:active{transform:scale(0.98);}
+  .btn:disabled{opacity:0.6;cursor:not-allowed;}
+
+  .status{margin-top:18px;padding:14px 16px;border-radius:8px;font-family:var(--mono);
+    font-size:13px;display:none;}
+  .status.show{display:block;}
+  .status.success{background:rgba(70,217,194,0.08);border:1px solid var(--teal);color:var(--teal);}
+  .status.error{background:rgba(240,104,92,0.08);border:1px solid var(--red);color:var(--red);}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    gap:12px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between max-w-4xl mx-auto px-4 sm:px-8 py-6 md:py-10">
+<body>
 
-    <!-- Content Container -->
-    <div class="flex-grow">
-        <!-- Navigation -->
-        <header>
-            <nav class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 sm:mb-14 border-b border-slate-200 pb-5">
-                <a href="index.html" class="font-extrabold text-2xl tracking-tight text-[#1E293B]">
-                    Falak Naz
-                </a>
-                <div class="flex flex-wrap items-center gap-1 sm:gap-4 text-sm font-semibold w-full sm:w-auto">
-                    <a href="index.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Home</a>
-                    <a href="cases.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">Case Studies</a>
-                    <a href="about.html" class="touch-target px-3 py-1.5 text-slate-600 hover:text-[#D97706] transition-colors">About</a>
-                    <a href="contact.html" class="touch-target px-3 py-1.5 text-[#D97706] border-b-2 border-[#D97706] font-bold">Contact</a>
-                </div>
-            </nav>
-        </header>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand"><span class="dot"></span>falak_naz</a>
+    <nav class="navlinks">
+      <a href="index.html">./home</a>
+      <a href="cases.html">./case-studies</a>
+      <a href="about.html">./about</a>
+      <a href="contact.html" class="active">./contact</a>
+    </nav>
+  </div>
+</header>
 
-        <main>
-            <!-- Page Header -->
-            <section class="mb-8">
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-[#1E293B] tracking-tight mb-3">
-                    Get In Touch
-                </h1>
-                <p class="text-slate-600 text-base max-w-xl leading-relaxed">
-                    Interested in discussing data engineering projects, machine learning pipeline collaborations, or scheduling a technical interview? Feel free to reach out directly.
-                </p>
-            </section>
+<main class="wrap">
+  <div class="eyebrow">POST /contact</div>
+  <h1>Let's talk.</h1>
+  <p class="sub">
+    Send a message and it lands straight in my inbox — no account, no login,
+    just a real email. I usually reply within a couple of days.
+  </p>
 
-            <!-- Main Grid: Form + Direct Links -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 items-start">
-                
-                <!-- Form Column -->
-                <form action="#" method="POST" class="bg-white p-6 sm:p-8 border border-slate-200 rounded-xl shadow-sm md:col-span-7">
-                    <div class="mb-5">
-                        <label for="email" class="block text-sm font-semibold text-[#1E293B] mb-1.5">Your Email</label>
-                        <input 
-                            type="email" 
-                            id="email"
-                            name="email"
-                            required
-                            class="w-full border border-slate-300 px-3.5 py-2.5 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D97706]/20 focus:border-[#D97706] transition-all text-sm" 
-                            placeholder="recruiter@company.com">
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-sm font-semibold text-[#1E293B] mb-1.5">Message</label>
-                        <textarea 
-                            id="message"
-                            name="message"
-                            required
-                            rows="4"
-                            class="w-full border border-slate-300 px-3.5 py-2.5 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D97706]/20 focus:border-[#D97706] transition-all text-sm resize-y" 
-                            placeholder="Schedule an interview or share project details..."></textarea>
-                    </div>
-                    <button 
-                        type="submit" 
-                        class="touch-target w-full bg-[#1E293B] text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-700 active:scale-[0.99] transition-all text-center shadow-sm">
-                        Send Message
-                    </button>
-                </form>
+  <div class="layout">
 
-                <!-- Professional Profiles & Info Column -->
-                <div class="md:col-span-5 space-y-4">
-                    <div class="bg-white p-6 border border-slate-200 rounded-xl shadow-sm">
-                        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Professional Profiles</h2>
-                        
-                        <div class="space-y-4 text-sm">
-                            <div>
-                                <div class="text-xs font-medium text-slate-500 mb-0.5">GitHub</div>
-                                <a href="https://github.com/FALAKNAZMALICK" target="_blank" rel="noopener noreferrer" class="touch-target text-[#D97706] font-semibold hover:underline inline-flex items-center gap-1.5">
-                                    <span>github.com/FALAKNAZMALICK</span>
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
-                            </div>
-
-                            <div class="border-t border-slate-100 pt-3">
-                                <div class="text-xs font-medium text-slate-500 mb-0.5">LinkedIn</div>
-                                <a href="https://linkedin.com/in/falaknaz-" target="_blank" rel="noopener noreferrer" class="touch-target text-[#D97706] font-semibold hover:underline inline-flex items-center gap-1.5">
-                                    <span>linkedin.com/in/falaknaz-</span>
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-amber-50/60 border border-amber-200/60 p-5 rounded-xl text-xs text-amber-900 leading-relaxed">
-                        <span class="font-bold block mb-1">Open to Opportunities</span>
-                        Actively seeking Data Engineering, ML Engineering, and Systems roles. Direct email responses are sent within 24 hours.
-                    </div>
-                </div>
-
-            </div>
-        </main>
+    <div class="side-card">
+      <div class="k">Status</div>
+      <div class="v">Open to internships & collaborations</div>
+      <div class="k">Based at</div>
+      <div class="v">NED University · Karachi</div>
+      <div class="k">Direct email</div>
+      <a class="v" href="mailto:your.email@example.com">your.email@example.com</a>
+      <div class="k">Elsewhere</div>
+      <a class="v" href="https://github.com/FALAKNAZMALICK" target="_blank" rel="noopener">github.com/FALAKNAZMALICK</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 pt-6 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Falak Naz. Built for performance and responsiveness.</p>
-    </footer>
+    <div>
+      <!--
+        SETUP: replace YOUR_FORM_ID below with your real Formspree form ID.
+        Sign up free at https://formspree.io, create a form, and it gives you
+        an endpoint like https://formspree.io/f/abcd1234 — swap it in below.
+      -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field" id="name-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name">
+          <div class="error-msg">Please enter your name.</div>
+        </div>
+
+        <div class="field" id="email-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+          <div class="error-msg">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field" id="message-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What would you like to say?"></textarea>
+          <div class="error-msg">Please write a message before sending.</div>
+        </div>
+
+        <!-- Honeypot field: hidden from real people, catches simple spam bots -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="btn" id="submit-btn">Send message</button>
+
+        <div class="status" id="form-status"></div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 Falak Naz</span>
+    <span>Messages sent through this form go straight to my email via Formspree.</span>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const statusBox = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  function setInvalid(fieldId, invalid){
+    document.getElementById(fieldId).classList.toggle('invalid', invalid);
+  }
+
+  function validate(){
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    setInvalid('name-field', name.length === 0);
+    setInvalid('email-field', !emailOk);
+    setInvalid('message-field', message.length === 0);
+
+    return name.length > 0 && emailOk && message.length > 0;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    statusBox.className = 'status';
+
+    if (!validate()) {
+      statusBox.textContent = 'Please fix the highlighted fields above.';
+      statusBox.classList.add('show', 'error');
+      return;
+    }
+
+    if (form.action.includes('YOUR_FORM_ID')) {
+      statusBox.textContent = 'Form not connected yet — add your Formspree form ID in the code.';
+      statusBox.classList.add('show', 'error');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        statusBox.textContent = "Thanks — your message is on its way. I'll be in touch soon.";
+        statusBox.classList.add('show', 'success');
+        form.reset();
+      } else {
+        statusBox.textContent = "Something went wrong on the server's end. Please try again, or email me directly.";
+        statusBox.classList.add('show', 'error');
+      }
+    } catch (err) {
+      statusBox.textContent = "Couldn't reach the server — check your connection and try again.";
+      statusBox.classList.add('show', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    }
+  });
+</script>
 
 </body>
 </html>
